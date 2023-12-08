@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "dj5doc/base.html" %}
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+
+{% block content %}
+<hr>
+<h2><a href="https://docs.djangoproject.com/en/5.0/intro/tutorial02/#playing-with-the-api">Playing with API</a></h2>
+
+<p>Question.objects.filter(id=1) --> <kbd>&lt;QuerySet [&lt;Question: What's new?>]></kbd></p>
+<p>Question.objects.get(id=1)</p>
+<p>Question.objects.get(pk=1)</p>
+<p>Question.objects.get(id=1) == Question.objects.get(pk=1)</p>
+
+<hr>
+<iframe src="https://docs.djangoproject.com/en/5.0/intro/tutorial02/#playing-with-the-api" style="max-width: 800px;"
+    frameborder="0">Playing with API</iframe>
+<hr><br><br>
+<embed src="https://docs.djangoproject.com/en/5.0/intro/tutorial02/#playing-with-the-api" style="max-width: 800px;"
+    frameborder="0">Playing with API</embed>
+<hr><br><br>
+<object src="https://docs.djangoproject.com/en/5.0/intro/tutorial02/#playing-with-the-api" style="max-width: 800px;"
+    frameborder="0">Playing with API</object>
+
+{% endblock content %}
+
+</html>

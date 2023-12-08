@@ -1,0 +1,25 @@
+.headerstl {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2vw;
+    background-color: rgba(9, 46, 32, 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.mainstl {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    background-color: rgb(3, 247, 52);
+    padding: 15px;
+    text-align: justify;
+}
+
+.footerstl {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3vw;
+    background-color: rgba(9, 46, 32, 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}

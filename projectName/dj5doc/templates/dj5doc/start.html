@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% extends 'dj5doc/base.html' %}
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Part1</title>
+</head>
+{% block content %}
+<h2>Projects vs. apps</h2>
+<p>What's the difference between a project and an app? An app is a web application that does something - e.g., a blog
+    system, a database of public records or a small poll app. A project is a collection of configuration and apps for a
+    particular website. A project can contain multiple apps. An app can be in multiple projects.</p>
+
+<h2><strong><kbd>include()</kbd></strong></h2>
+<p>The <strong><kbd>include()</kbd></strong> function allows referencing other URLconfs. Whenever Django encounters
+    <strong><kbd>include()</kbd></strong>, it chops off whatever part of the URL matched up to that point and sends the
+    remaining string to the included URLconf for further processing.
+</p>
+
+<p>The idea behind <strong><kbd>include()</kbd></strong> is to make it easy to plug-and-play URLs. Since polls are in
+    their own URLconf (<strong>polls/urls.py</strong>), they can be placed under “/polls/”, or under “/fun_polls/”, or
+    under “/content/polls/”, or any other path root, and the app will still work.</p>
+<br>
+<h2><strong><kbd>path()</kbd></strong></h2>
+<p>The <strong>path()</strong> function is passed <strong><u>four arguments</u></strong>, two required:
+    <strong>route</strong> and <strong>view</strong>, and two optional: <u>kwargs</u>, and <u>name</u>. At this point,
+    it's worth reviewing what these arguments are for.
+</p>
+<p>
+    <a href="https://docs.djangoproject.com/en/5.0/intro/tutorial01/#path-argument-route"
+        target="_blank"><strong><kbd>path()</kbd></strong>
+        argument: <strong>route</strong></a>
+</p>
+<p><strong>route</strong> is a <strong>string</strong> that contains a URL pattern. When processing a request, Django
+    starts at the first pattern in urlpatterns and makes its way down the list, comparing the requested URL against each
+    pattern until it finds one that matches.
+
+    Patterns don't search GET and POST parameters, or the domain name. For example, in a request to
+    <strong>https://www.example.com/myapp/</strong>, the URLconf will look for <strong>myapp/</strong>. In a request to
+    <strong>https://www.example.com/myapp/?page=3</strong> , the URLconf will also look for <strong>myapp/</strong>.
+</p>
+<p>
+    <a href="https://docs.djangoproject.com/en/5.0/intro/tutorial01/#path-argument-view"
+        target="_blank"><strong><kbd>path()</kbd></strong>
+        argument: <strong>view</strong></a>
+</p>
+<p>When Django finds a matching pattern, it calls the specified view function with an <a
+        href="https://docs.djangoproject.com/en/5.0/ref/request-response/#django.http.HttpRequest"
+        target="_blank">HttpRequest</a> object as the first argument and any “captured” values from the route as keyword
+    arguments.</p>
+
+<p>
+    <strong><kbd>path()</kbd></strong>
+    argument: <strong>kwargs</strong>
+</p>
+<p>Arbitrary keyword arguments can be passed in a <strong>dictionary</strong> to the target view.</p>
+<p>
+    <strong><kbd>path()</kbd></strong>
+    argument: <strong>name</strong>
+</p>
+<p>Naming your URL lets you refer to it unambiguously from elsewhere in Django, especially from within templates. This
+    <b>powerful feature</b> allows you to make global changes to the URL patterns of your project while only touching a
+    single file.
+</p>
+{% endblock content %}
+
+</html>

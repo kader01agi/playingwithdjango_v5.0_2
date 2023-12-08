@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <meta name="Author" content="MD. ABDUL KADER">
+    <link rel="stylesheet" href="{% static 'assets/stylesheet.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/favicon.png' %}" type="image/x-icon">
+</head>
+
+<body>
+    <header class="headerstl">
+        <h1>Web App with Django v5.0</h1>
+        <hr>
+    </header>
+    <main class="mainstl">
+        <hr>
+        <nav>
+            <p><a href="start.html" target="_blank">Part 1: Requests and responses</a></p>
+            <p><a href="tutorial02.html" target="_blank">Part 2.x: Playing with API</a></p>
+        </nav>
+        <hr>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer class="footerstl">
+        <hr>
+        <p><a href="#top">Back To top</a></p>
+        <p>&copy;Copyright 2023</p>
+    </footer>
+</body>
+
+</html>
