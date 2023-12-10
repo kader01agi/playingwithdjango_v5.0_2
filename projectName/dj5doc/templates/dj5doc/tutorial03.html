@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "dj5doc/base.html" %}
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>{% block title %}tutorial03{% endblock title %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <p>The <kbd><strong>render()</strong></kbd> function takes the <u><em>request object</em></u> as its first argument,
+        a <u><em>template name</em></u>
+        as its second argument and
+        a <u><em>dictionary</em></u> as its optional third argument. It returns an <strong>HttpResponse object</strong>
+        of the given
+        template rendered
+        with the given context.</p>
+    {% endblock content %}
+</body>
+
+</html>

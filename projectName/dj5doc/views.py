@@ -11,6 +11,9 @@ def start(request):
 def tutorial02(request):
     return render(request, 'dj5doc/tutorial02.html')
 
+def tutorial03(request):
+    return render(request, 'dj5doc/tutorial03.html')
+
 def codepractice(request):
     name = "MD. ABDUL KADER"
     country = "Bangladesh"

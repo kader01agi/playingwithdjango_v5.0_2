@@ -9,7 +9,7 @@
 
 .mainstl {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 2vw;
+    font-size: 20px;
     background-color: rgba(3, 247, 52, 0.3);
     padding: 15px;
     text-align: justify;
@@ -17,7 +17,7 @@
 
 .navstl {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 2vw;
+    font-size: 15px;
     background-color: rgba(3, 247, 52, 0.5);
     padding: 15px;
     text-align: justify;
@@ -28,6 +28,6 @@
     font-size: 3vw;
     background-color: rgba(9, 46, 32, 100%);
     color: white;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
 }
