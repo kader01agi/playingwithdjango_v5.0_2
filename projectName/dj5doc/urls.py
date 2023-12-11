@@ -7,6 +7,7 @@ urlpatterns = [
     path('tutorial02/', views.tutorial02),
     path('tutorial03/', views.tutorial03),
     path('codepractice/', views.codepractice),
+    path('sql/', views.sql),
     path('marketplace/', views.marketplace),
     path('about/', views.about),
     path('contacts/', views.contacts),

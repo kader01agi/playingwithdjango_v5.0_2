@@ -1,0 +1,59 @@
+{% extends "dj5doc/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>{% block title %}SQL commands{% endblock title %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <pre>
+        SELECT column1, column2, ... FROM table_name;
+        SELECT DISTINCT column1, column2, ... FROM table_name;
+        SELECT COUNT(DISTINCT column) FROM table_name;
+        SELECT * FROM table_name WHERE Country='Mexico';
+        SELECT column1, column2, ... FROM table_name WHERE condition;
+        SELECT * FROM table_name WHERE CustomerID=1;
+        
+        <>	Not equal. Note: In some versions of SQL this operator may be written as !=
+        BETWEEN	Between a certain range	
+        LIKE	Search for a pattern	
+        IN	To specify multiple possible values for a column
+
+
+        Use the NOT keyword to select all records where City is NOT "Berlin".
+            SELECT * FROM table_name <strong>WHERE NOT</strong> City='Berlin';
+            
+            
+        Select all records where the City column has the value 'Berlin' and the PostalCode column has the value 12209.
+            SELECT * FROM table_name WHERE City='Berlin' AND PostalCode=12209;
+        
+        Select all records where the City column has the value 'Berlin' or 'London'.
+            SELECT * FROM table_name WHERE City='Berlin' OR City='London';
+        
+        SELECT * FROM table_name ORDER BY Price; # ascending order by default
+        SELECT * FROM table_name ORDER BY Price DESC;
+        SELECT * FROM table_name ORDER BY column_name;
+        SELECT column1, column2, ... FROM table_name ORDER BY column1, column2, ... ASC|DESC;
+        SELECT * FROM table_name ORDER BY column1, column2;
+        SELECT * FROM table_name ORDER BY column_name ASC, column_name DESC;
+
+        For string values the ORDER BY keyword will order "alphabetically":
+        (SELECT * FROM table_name ORDER BY column_name;)
+        (SELECT * FROM table_name ORDER BY column_name DESC;)
+
+        SELECT column1, column2, ... FROM table_name WHERE condition1 AND condition2 AND condition3 ...;
+            SELECT * FROM Customers WHERE Country = 'Spain' AND CustomerName <strong><mark>LIKE</mark></strong> 'G%';
+            SELECT * FROM Customers WHERE Country = 'Germany' AND City = 'Berlin' AND PostalCode > 12000;
+        
+        Select all Spanish customers that starts with <mark>either "G" or "R":
+            SELECT * FROM Customers WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');</mark>
+        Without parenthesis, the select statement will return all customers from Spain that starts with a "G", 
+        plus all customers that starts with an "R", regardless of the country value.
+    </pre>
+    {% endblock content %}
+</body>
+
+</html>

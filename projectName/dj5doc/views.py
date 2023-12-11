@@ -21,6 +21,9 @@ def codepractice(request):
     data = {"name": name, "country": country, "skills": skills}
     return render(request, 'dj5doc/codepractice.html', data)
 
+def sql(request):
+    return render(request, 'dj5doc/sqlcommands.html')
+
 def marketplace(request):
     return render(request, 'dj5doc/marketplace.html')
 
