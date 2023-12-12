@@ -52,6 +52,44 @@
             SELECT * FROM Customers WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');</mark>
         Without parenthesis, the select statement will return all customers from Spain that starts with a "G", 
         plus all customers that starts with an "R", regardless of the country value.
+    
+    SELECT column1, column2, ... FROM table_name WHERE NOT condition;
+    SELECT * FROM Customers WHERE CustomerName NOT LIKE 'A%';
+    
+    SELECT * FROM Customers WHERE CustomerID NOT BETWEEN 10 AND 60;
+    SELECT * FROM Customers WHERE City NOT IN ('Paris', 'London');
+
+    Select customers with a CustomerId not greater than 50:
+    SELECT * FROM Customers WHERE NOT CustomerID > 50;
+    <b>Note</b>: There is a not-greater-then operator: <b>!></b> that would give you the same result.
+
+    Select customers with a CustomerID not less than 50:
+    SELECT * FROM Customers WHERE NOT CustomerId < 50;
+    <b>Note</b>: There is a not-less-than operator: <b>!<</b> that would give you the same result.
+
+    <a href="https://www.w3schools.com/sql/sql_insert.asp">Insert Data Only in Specified Columns, Insert Multiple Rows</a>
+
+    SELECT column_names FROM table_name WHERE column_name IS NULL;
+    SELECT column_names FROM table_name WHERE column_name IS NOT NULL;
+
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition;
+
+    UPDATE Customers
+    SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+    WHERE CustomerID = 1;
+
+
+    <mark>DELETE FROM table_name WHERE condition;</mark> 
+
+    Delete All Records
+    It is possible to delete all rows in a table without deleting the table. This means that the table structure, attributes, and indexes will be intact:
+        <strong>DELETE FROM table_name;</strong>
+
+    Delete a Table
+        DROP TABLE table_name;
+
     </pre>
     {% endblock content %}
 </body>
