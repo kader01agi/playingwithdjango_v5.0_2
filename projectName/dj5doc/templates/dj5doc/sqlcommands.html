@@ -26,8 +26,46 @@
     TO DISK = 'filepath'
     WITH DIFFERENTIAL;        
     </pre>
-
-
+    <h2>ALTER TABLE</h2>
+    <p>ALTER TABLE table_name ADD column_name datatype;</p>
+    <p>ALTER TABLE table_name DROP COLUMN column_name;</p>
+    <p>ALTER TABLE table_name RENAME COLUMN old_name <mark>to</mark> new_name;</p>
+    <p>ALTER TABLE table_name <mark>ALTER COLUMN column_name</mark> datatype;</p>
+    <a href="https://www.w3schools.com/sql/sql_constraints.asp">
+        <h4>SQL Constraints</h4>
+    </a>
+    <p>you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table.</p>
+    <a href="https://www.w3schools.com/sql/sql_in.asp">
+        <p>SQL IN Operator: IN, NOT IN</p>
+    </a>
+    <a href="https://www.w3schools.com/sql/sql_union.asp">SQL UNION</a>
+    <pre>
+        SELECT City, Country FROM Customers
+        WHERE Country='Germany'
+        UNION ALL
+        SELECT City, Country FROM Suppliers
+        WHERE Country='Germany'
+        ORDER BY City;
+    </pre>
+    <pre>
+        SELECT 'Customer' AS Type, ContactName, City, Country
+        FROM Customers
+        UNION
+        SELECT 'Supplier', ContactName, City, Country
+        FROM Suppliers;
+    </pre>
+    <hr>
+    <pre>
+        SELECT * FROM Products
+        WHERE Price BETWEEN 10 AND 20
+        AND CategoryID IN (1,2,3);</pre>
+    <pre>
+        SELECT * FROM Products
+        WHERE ProductName NOT BETWEEN 'Carnarvon' AND 'Mozzarella'
+        ORDER BY ProductName;
+    </pre>
+    <br><br><br>
+    <hr>
     <pre>
     SELECT column1, column2, ... FROM table_name;
     SELECT DISTINCT column1, column2, ... FROM table_name;
@@ -176,6 +214,25 @@
 
     SELECT MIN(Price) AS SmallestPrice
     FROM table_name;
+    
+    SELECT CustomerID AS ID, CustomerName AS Customer
+    FROM Customers;
+
+    SELECT ProductName AS [My Great Products]
+    FROM Products;
+
+    SELECT ProductName AS "My Great Products"
+    FROM Products;
+
+    Concatenate Columns
+    SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address
+    FROM Customers;
+    
+    SELECT CustomerName, CONCAT(Address,', ',PostalCode,', ',City,', ',Country) AS Address
+    FROM Customers;
+
+    Alias for Tables
+    SELECT * FROM Customers AS Persons;
     </pre>
 
     <h2>The SQL COUNT() Function</h2>
