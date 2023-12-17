@@ -56,6 +56,12 @@
     </pre>
     <hr>
     <pre>
+        SELECT COUNT(CustomerID), Country
+        FROM Customers
+        GROUP BY Country
+        ORDER BY COUNT(CustomerID) DESC;</pre>
+    <hr>
+    <pre>
         SELECT * FROM Products
         WHERE Price BETWEEN 10 AND 20
         AND CategoryID IN (1,2,3);</pre>
